@@ -5,8 +5,12 @@ spring:
 giphy-api-key: fHaPkumnxrfb5JoPB1r3PmEvs7rzWIu7
 openexchangerates-api-key: 27f7301e074543518cdc3ed2d8821676
 
-rate-up-url: "https://giphy.com/search/rich"
-rate-down-url: "https://giphy.com/search/broke"
+rate-first-part: "https://api.giphy.com/v1/gifs/search?api_key="
+rate-third-part: "&q="
+rich: rich
+broke: broke
+rate-final: "&limit=1&offset=0&rating=g&lang=en"
+
 exchange-url-now: "https://openexchangerates.org/api/latest.json?app_id="
 exchange-url-yesterday: "https://openexchangerates.org/api/historical/"
 one-unit: "&symbols="

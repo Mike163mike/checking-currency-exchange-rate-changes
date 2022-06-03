@@ -1,6 +1,7 @@
 package com.example.mike.checkingcurrencyexchangeratechanges.controller;
 
 import com.example.mike.checkingcurrencyexchangeratechanges.service.CurrencyTrend;
+import com.example.mike.checkingcurrencyexchangeratechanges.service.GifService;
 import com.example.mike.checkingcurrencyexchangeratechanges.service.MainService;
 import com.example.mike.checkingcurrencyexchangeratechanges.service.ParserService;
 import org.springframework.stereotype.Controller;
@@ -16,17 +17,26 @@ import java.util.Locale;
 @RequestMapping("/")
 public class MainController {
 
-    public ParserService parserService;
-    public MainService mainService;
+    private final ParserService parserService;
+    private final MainService mainService;
+    private final GifService gifService;
+
+    public MainController(ParserService parserService, MainService mainService, GifService gifService) {
+        this.parserService = parserService;
+        this.mainService = mainService;
+        this.gifService = gifService;
+    }
 
     @GetMapping("/{currencyId}")
     public String getCurrencyTrend(@PathVariable("currencyId") String currencyId,
                                    Model model) throws IOException {
-        String currencyTrendNow = "UP";
-        String url = "https://giphy.com/search/rich";
-        model.addAttribute("currencyTrendNow", currencyTrendNow);
+        String today = parserService.parseResponseTodayRate(currencyId.toUpperCase(Locale.ROOT));
+        String yesterday = parserService.parseResponseYesterdaysRate(currencyId.toUpperCase(Locale.ROOT));
+        CurrencyTrend trend = mainService.compareRates(today, yesterday);
+        String request = gifService.getGifUrl(mainService);
+        model.addAttribute("currencyTrendNow", trend.toString());
         model.addAttribute("requestCurrency", currencyId.toUpperCase(Locale.ROOT));
-        model.addAttribute("url", url);
+        model.addAttribute("url", request);
         return "index";
     }
 }
