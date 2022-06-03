@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: checking-currency-exchange-rate-changes
+
+giphy-api-key: fHaPkumnxrfb5JoPB1r3PmEvs7rzWIu7
+openexchangerates-api-key: 27f7301e074543518cdc3ed2d8821676
+
+rate-up-url: "https://giphy.com/search/rich"
+rate-down-url: "https://giphy.com/search/broke"
+exchange-url-now: "https://openexchangerates.org/api/latest.json?app_id="
+exchange-url-yesterday: "https://openexchangerates.org/api/historical/"
+one-unit: "&symbols="
+historical-part: ".json?app_id="
+
+#base-currency: USD
+
+#"historical/2012-07-10.json?app_id=YOUR_APP_ID"
+

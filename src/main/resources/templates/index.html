@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Main page</title>
+</head>
+<body>
+<h1>Hello! <span th:text="${requestCurrency}"></span> exchange rate is <span th:text="${currencyTrendNow}"></span></h1>
+<br/>
+
+    <img th:src="@{url}" width="300" height="200" alt="GIF"/>
+
+<!--<iframe width="500" height="300" src="https://giphy.com/search/rich" frameborder="0" allow="accelerometer;-->
+<!--autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+
+</body>
+</html>
