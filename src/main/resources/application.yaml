@@ -5,18 +5,11 @@ spring:
 giphy-api-key: fHaPkumnxrfb5JoPB1r3PmEvs7rzWIu7
 openexchangerates-api-key: 27f7301e074543518cdc3ed2d8821676
 
-rate-first-part: "https://api.giphy.com/v1/gifs/search?api_key="
-rate-third-part: "&q="
-rich: rich
-broke: broke
-rate-final: "&limit=1&offset=0&rating=g&lang=en"
+tag-broke: broke
+tag-rich: rich
 
-exchange-url-now: "https://openexchangerates.org/api/latest.json?app_id="
-exchange-url-yesterday: "https://openexchangerates.org/api/historical/"
-one-unit: "&symbols="
-historical-part: ".json?app_id="
-
-#base-currency: USD
-
-#"historical/2012-07-10.json?app_id=YOUR_APP_ID"
-
+feign:
+  exchange-rates-name: "exchange-rates"
+  exchange-rates-url: "https://openexchangerates.org/api/"
+  giphy-name: "giphy"
+  giphy-url: "https://api.giphy.com/v1/"
