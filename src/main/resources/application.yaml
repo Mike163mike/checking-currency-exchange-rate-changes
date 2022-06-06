@@ -1,6 +1,6 @@
 spring:
   application:
-    name: checking-currency-exchange-rate-changes
+    name: exchange-checker
 
 giphy-api-key: fHaPkumnxrfb5JoPB1r3PmEvs7rzWIu7
 openexchangerates-api-key: 27f7301e074543518cdc3ed2d8821676

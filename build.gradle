@@ -1,12 +1,12 @@
 plugins {
-    id 'org.springframework.boot' version '2.7.0'
+    id 'org.springframework.boot' version '2.5.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
 group = 'com.example.mike'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -19,7 +19,7 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "2021.0.3")
+    set('springCloudVersion', "2020.0.4")
 }
 
 dependencies {
@@ -29,6 +29,7 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'io.github.openfeign:feign-okhttp:11.8'
     implementation 'io.github.openfeign:feign-gson:11.8'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.7'
     implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 //    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
 //    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'

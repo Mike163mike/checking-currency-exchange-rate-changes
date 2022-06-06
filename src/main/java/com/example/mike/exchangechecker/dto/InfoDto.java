@@ -1,4 +1,4 @@
-package com.example.mike.checkingcurrencyexchangeratechanges.dto;
+package com.example.mike.exchangechecker.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

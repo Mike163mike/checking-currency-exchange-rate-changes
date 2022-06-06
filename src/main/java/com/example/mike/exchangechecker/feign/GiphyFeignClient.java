@@ -1,6 +1,6 @@
-package com.example.mike.checkingcurrencyexchangeratechanges.feign;
+package com.example.mike.exchangechecker.feign;
 
-import com.example.mike.checkingcurrencyexchangeratechanges.dto.GifDto;
+import com.example.mike.exchangechecker.dto.GifDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

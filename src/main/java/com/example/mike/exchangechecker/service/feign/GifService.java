@@ -1,18 +1,16 @@
-package com.example.mike.checkingcurrencyexchangeratechanges.service.feign;
+package com.example.mike.exchangechecker.service.feign;
 
-import com.example.mike.checkingcurrencyexchangeratechanges.dto.GifDto;
-import com.example.mike.checkingcurrencyexchangeratechanges.feign.GiphyFeignClient;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import com.example.mike.exchangechecker.dto.GifDto;
+import com.example.mike.exchangechecker.feign.GiphyFeignClient;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GifService {
 
-    private GiphyFeignClient giphyFeignClient;
+    private final GiphyFeignClient giphyFeignClient;
 
     @Value("${giphy-api-key}")
     private String token;

@@ -1,10 +1,8 @@
-package com.example.mike.checkingcurrencyexchangeratechanges.service.feign;
+package com.example.mike.exchangechecker.service.feign;
 
-import com.example.mike.checkingcurrencyexchangeratechanges.dto.CurrencyListDto;
-import com.example.mike.checkingcurrencyexchangeratechanges.dto.ExchangeRateDto;
-import com.example.mike.checkingcurrencyexchangeratechanges.feign.ExchangeRateFeignClient;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import com.example.mike.exchangechecker.dto.ExchangeRateDto;
+import com.example.mike.exchangechecker.feign.ExchangeRateFeignClient;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +11,10 @@ import java.time.LocalDate;
 import java.util.Map;
 
 @Service
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ExchangeRateService {
 
-    private ExchangeRateFeignClient exchangeRateFeignClient;
+    private final ExchangeRateFeignClient exchangeRateFeignClient;
 
     @Value("${openexchangerates-api-key}")
     private String token;
@@ -43,8 +40,7 @@ public class ExchangeRateService {
         return rateDto.getRates().get(currency);
     }
 
-    public Map<String, String> getCurrencyMap() {
-        CurrencyListDto listDto = exchangeRateFeignClient.getCurrencyMaps();
-        return listDto.getCurrency();
+    public Map<String, String> getCurrencies() {
+        return exchangeRateFeignClient.getCurrencies();
     }
 }
