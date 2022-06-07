@@ -1,8 +1,7 @@
 package com.example.mike.exchangechecker.controller;
 
-import com.example.mike.exchangechecker.service.UtilService;
+import com.example.mike.exchangechecker.service.GifChooseService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,21 +13,21 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@Tag(name = "Dev-gif-controller", description = "Dev gif controller")
+//@Tag(name = "Dev-gif-controller", description = "Dev gif controller")
 @RequestMapping("/dev")
 public class DevGifController {
 
-    private final UtilService utilService;
+    private final GifChooseService gifChooseService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/v1/check-exchange/{id}")
     @ApiOperation("Getting the url of appropriate GIF in accordance with actual currency trend.")
     public ResponseEntity<String> getAppropriateGif(@PathVariable("id") String currency) {
-        return ResponseEntity.ok(utilService.appropriateGif(currency));
+        return ResponseEntity.ok(gifChooseService.appropriateGif(currency));
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/v1/info")
     @ApiOperation("Getting complete list with short view of currency type.")
     public ResponseEntity<Map<String, String>> info() {
-        return ResponseEntity.ok(utilService.currenciesInfo());
+        return ResponseEntity.ok(gifChooseService.currenciesInfo());
     }
 }

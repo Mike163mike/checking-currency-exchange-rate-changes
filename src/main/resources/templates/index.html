@@ -1,21 +1,12 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8"/>-->
-<!--    <title>Main page</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Hello! <span th:text="${requestCurrency}"></span> exchange rate is <span th:text="${currencyTrendNow}"></span></h1>-->
-<!--<br/>-->
-
-<!--<img th:src="@{url}" width="300" height="200" alt="GIF"/>-->
-
-<!--<a th:href="@{url}"/>-->
-
-<!--<img th:attr="src=@{${url}}/>-->
-
-<!--&lt;!&ndash;<iframe width="500" height="300" src="https://giphy.com/search/rich" frameborder="0" allow="accelerometer;&ndash;&gt;-->
-<!--&lt;!&ndash;autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>&ndash;&gt;-->
-
-<!--</body>-->
-<!--</html>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Main page</title>
+</head>
+<body>
+<h1 style="text-align: center" ><span th:text="${currency}"></span> exchange rate is <span th:text="${trend}"></span></h1>
+<br/>
+<img th:attr="src=@{${gifUrl}}" alt="No GIF. We are sorry!"/>
+</body>
+</html>

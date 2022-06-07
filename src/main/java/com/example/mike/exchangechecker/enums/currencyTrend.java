@@ -1,6 +1,6 @@
 package com.example.mike.exchangechecker.enums;
 
-public enum CurrencyTrend {
+public enum currencyTrend {
     UP,
     DOWN,
     CONSTANT
