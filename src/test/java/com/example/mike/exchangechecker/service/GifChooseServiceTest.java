@@ -29,15 +29,6 @@ class GifChooseServiceTest {
     private GifChooseService gifChooseService;
 
     @Test
-    void appropriateGif() {
-        //currencyTrend trend = currencyTrend.UP;
-        Mockito.when(gifService.getGif("UP")).thenReturn("https://developers.giphy.com/");
-        String result = gifChooseService.appropriateGif("EUR");
-        String expected = "https://developers.giphy.com/";
-        assertEquals(expected, result);
-    }
-
-    @Test
     void getActualCurrencyTrend() {
         Mockito.when(exchangeRateService.getLatestRate(any())).thenReturn(new BigDecimal(2));
         Mockito.when(exchangeRateService.getRateOnDate(any(), any())).thenReturn(new BigDecimal(1));
@@ -49,9 +40,9 @@ class GifChooseServiceTest {
     @Test
     void currenciesInfo() {
         Mockito.when(exchangeRateService.getCurrencies()).thenReturn(
-                (Map.of("RUB","3", "USD","1","EUR", "2")));
+                (Map.of("RUB", "3", "USD", "1", "EUR", "2")));
         Map<String, String> result = exchangeRateService.getCurrencies();
-        Map<String, String> expected = (Map.of("RUB","3", "USD","1","EUR", "2"));
+        Map<String, String> expected = (Map.of("RUB", "3", "USD", "1", "EUR", "2"));
         assertEquals(expected, result);
     }
 }

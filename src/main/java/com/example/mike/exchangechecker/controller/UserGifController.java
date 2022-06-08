@@ -13,7 +13,6 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
-//@Tag(name = "User-gif-controller", description = "User gif controller")
 @RequestMapping("/user")
 public class UserGifController {
 

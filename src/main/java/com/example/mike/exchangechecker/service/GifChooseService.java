@@ -41,7 +41,6 @@ public class GifChooseService {
         return ParserUtil.compareRates(today, yesterday);
     }
 
-
     public Map<String, String> currenciesInfo() {
         Map<String, String> currencies = exchangeRateService.getCurrencies();
         if (currencies == null) {

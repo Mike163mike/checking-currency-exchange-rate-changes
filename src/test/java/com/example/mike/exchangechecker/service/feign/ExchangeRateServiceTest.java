@@ -51,9 +51,9 @@ class ExchangeRateServiceTest {
                 "USD", new BigDecimal(1),
                 "EUR", new BigDecimal(2))));
         Mockito.when(exchangeRateFeignClient.getCurrencies()).thenReturn(
-                (Map.of("RUB","3", "USD","1","EUR", "2")));
+                (Map.of("RUB", "3", "USD", "1", "EUR", "2")));
         Map<String, String> result = exchangeRateService.getCurrencies();
-        Map<String, String> expected = (Map.of("RUB","3", "USD","1","EUR", "2"));
+        Map<String, String> expected = (Map.of("RUB", "3", "USD", "1", "EUR", "2"));
         assertEquals(expected, result);
     }
 }

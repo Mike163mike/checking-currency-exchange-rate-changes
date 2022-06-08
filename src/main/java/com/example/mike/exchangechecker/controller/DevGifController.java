@@ -13,7 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-//@Tag(name = "Dev-gif-controller", description = "Dev gif controller")
 @RequestMapping("/dev")
 public class DevGifController {
 
